@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>除法探險隊｜POLYA 解題四步曲</title>
+<style>
+:root{--ink:#22315b;--purple:#7047d7;--pink:#ff5b9b;--yellow:#ffd54c;--mint:#4ed4b7;--paper:#fffdf8}*{box-sizing:border-box}body{margin:0;font-family:"PingFang HK","Noto Sans TC",Arial,sans-serif;color:var(--ink);background:linear-gradient(135deg,#b8f4ff,#f7d4ff 48%,#fff5b8);min-height:100vh}.wrap{max-width:1080px;margin:auto;padding:22px 16px 42px}.hero{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:15px}.hero h1{font-size:clamp(1.55rem,4vw,2.55rem);margin:0;color:#47308e;text-shadow:2px 2px #fff}.hero p{margin:5px 0 0;font-weight:700}.mascot{font-size:58px;filter:drop-shadow(0 5px 0 #fff)}.progress{display:flex;gap:7px;margin:12px 0 18px}.dot{height:11px;flex:1;border-radius:20px;background:#d8d3ec}.dot.done{background:var(--mint)}.dot.now{background:var(--pink)}.book{background:var(--paper);border:5px solid #fff;border-radius:30px;box-shadow:0 13px 0 #8055b644,0 21px 36px #4c356344;overflow:hidden;position:relative}.page{padding:clamp(18px,4vw,38px);min-height:580px;animation:arrive .4s ease-out}.page.turn{animation:turn .65s ease-in-out}@keyframes arrive{from{opacity:.3;transform:translateY(12px)}to{opacity:1}}@keyframes turn{0%{transform:rotateY(0);transform-origin:left}48%{opacity:.05;transform:rotateY(-88deg)}100%{transform:rotateY(0)}}.badge{display:inline-block;background:var(--yellow);border:2px solid #d79718;border-radius:99px;padding:6px 12px;font-weight:900}.qtitle{font-size:clamp(1.25rem,3vw,1.75rem);line-height:1.6;margin:15px 0}.story{background:#e6faff;border-radius:18px;padding:14px 17px;border-left:7px solid #35bade;font-size:1.06rem;line-height:1.75}.visual{margin:20px 0;background:#f8f0ff;border:3px dashed #bf8eea;border-radius:19px;padding:15px;overflow:auto}.bars{display:flex;gap:4px;min-width:max-content}.bar{height:34px;width:14px;border-radius:5px;background:linear-gradient(90deg,#ffdd65,#ff9d45);border:1px solid #d96c30}.bar:nth-child(3n){background:linear-gradient(90deg,#8fe5ff,#5c9fee)}.groups{display:flex;gap:9px;flex-wrap:wrap}.group{padding:7px;border:2px solid #8b72db;border-radius:12px;background:#fff;min-width:78px}.cookie{font-size:22px}.stephead{display:flex;align-items:center;gap:10px;margin:5px 0 15px}.stepnum{width:40px;height:40px;border-radius:50%;background:var(--purple);color:#fff;display:grid;place-items:center;font-size:1.3rem;font-weight:900}.stephead h2{margin:0;font-size:1.25rem}.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px;margin:18px 0}.choice,button{font:inherit;font-weight:800;cursor:pointer}.choice{border:3px solid #d9d3ec;border-radius:16px;padding:15px;background:#fff;color:var(--ink);text-align:left;min-height:67px}.choice:hover,.choice:focus{border-color:var(--purple);transform:translateY(-2px)}.entry{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:#f1f6ff;padding:15px;border-radius:16px;font-size:1.28rem;font-weight:900}.entry input{width:80px;min-height:48px;border:3px solid #9eaee5;border-radius:10px;padding:8px;font:inherit;text-align:center}.entry input.long{width:170px}.primary{min-height:48px;border:0;border-radius:14px;padding:13px 19px;background:linear-gradient(135deg,var(--pink),#f27450);color:white;box-shadow:0 5px 0 #bd356c}.primary:active{box-shadow:none;transform:translateY(5px)}.feedback{min-height:31px;font-weight:800;margin:11px 0}.success{color:#138a67}.error{color:#cf3866}.checklist{display:grid;gap:11px;margin:14px 0}.check{padding:13px;border:2px solid #d9d3ec;border-radius:14px;background:#fff}.celebrate{text-align:center;padding:35px 15px}.celebrate .big{font-size:75px}.small{font-size:.92rem;color:#5b6180}.footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px}@media(max-width:540px){.hero{align-items:flex-start}.mascot{font-size:42px}.page{min-height:630px;padding:18px}.entry{font-size:1.05rem}.entry input{width:65px}.entry input.long{width:125px}.footer{align-items:stretch;flex-direction:column}.footer .primary{width:100%}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+<style>.groups .ellipsis{align-self:center;font-size:2.35rem;font-weight:900;letter-spacing:.12em;color:#7047d7;white-space:nowrap;padding:0 6px}</style>
+<style>.read-instruction{background:#fff2bd;border:3px solid #f4b83d;border-radius:18px;padding:14px 16px;font-weight:800;line-height:1.6}.keyword{display:inline;padding:1px 4px;margin:0 1px;background:transparent;border:0;border-bottom:3px dashed #7047d7;border-radius:12px;color:inherit;font:inherit;font-weight:900;cursor:pointer;touch-action:manipulation}.keyword.marked{border:3px solid #f05a93;background:#ffe1ed;border-radius:999px;box-shadow:0 2px 0 #bd356c}.keyword:focus-visible{outline:3px solid #22315b;outline-offset:2px}.mark-count{font-weight:900;color:#7047d7}.primary:disabled{opacity:.55;cursor:not-allowed;box-shadow:none}</style>
+</head><body><main class="wrap"><header class="hero"><div><h1>➗ 除法探險隊</h1><p>跟著 POLYA 解題四步曲，找出正確除式！</p></div><div class="mascot" aria-hidden="true">🦊</div></header><div id="progress" class="progress" aria-label="題目進度"></div><section class="book"><div id="page" class="page"></div></section></main>
+<script>
+
+const qs=[
+ {kind:'均分除',a:98,b:14,q:7,r:0,title:'插花班的導師把 98 枝百合花平均分給 14 名學生，每名學生可得百合花多少枝？',keys:['98 枝百合花','平均分給','14 名學生'],hint:'「平均分給」表示每一份要一樣多。',unit:'枝百合花',visual:'bars'},
+ {kind:'包含除',a:256,b:18,q:14,r:4,title:'手工製作班的導師預備了 256 個玩具摩天輪車輪。製作一台玩具摩天輪需要車輪 18 個，最多可製作玩具摩天輪多少台？',keys:['256 個','18 個','最多可製作'],hint:'「每 18 個製作一台」表示看看 256 裏包含多少個 18。',unit:'台玩具摩天輪',visual:'groups'},
+ {kind:'包含除',a:188,b:12,q:15,r:8,title:'有 188 名參加武術班的學生，每 12 人分成一組；餘下的學生自成一組。共可分成多少組？',keys:['188 名','每 12 人','餘下的學生自成一組'],hint:'先找完整的 12 人一組；題目說餘下的學生自成一組。',unit:'組',visual:'students',round:true},
+ {kind:'包含除',a:870,b:15,q:58,r:0,title:'嘉任班有 870 塊曲奇，每 15 塊包成一包，每 2 包放進一盒。共有多少盒？',keys:['870 塊曲奇','每 15 塊','每 2 包','多少盒'],hint:'這題要分兩步：先求可包成多少包，再把每 2 包放進一盒。',unit:'盒',visual:'bars',two:true}
+];let n=0,step=0,attempts=0,reading=true,marked=new Set();
+const page=document.querySelector('#page'),progress=document.querySelector('#progress');
+function dots(){
+  progress.innerHTML=qs.map((_,i)=>'<i class="dot '+(i<n?'done':(i===n?'now':''))+'"></i>').join('');
+}
+function vis(x){
+  if(x.visual==='students'){
+    return '<div class="groups">'+Array.from({length:12},()=>'<span class="cookie">🧒</span>').join('')+'<b>　每組 12 人</b></div>';
+  }
+  if(x.visual==='groups'){
+    return '<div class="groups" aria-label="只顯示部分玩具摩天輪，後面還有更多">'+Array.from({length:6},()=>'<div class="group">🔩 🔩 🔩<br>🔩 🔩 🔩<br><small>每台 18 個零件</small></div>').join('')+'<span class="ellipsis" aria-label="還有更多">⋯⋯</span></div>';
+  }
+  if(x.a===98){
+    return '<div class="bars many">'+Array.from({length:98},()=>'<i class="bar"></i>').join('')+'<b>共有 98 枝百合花，平均分給 14 名學生</b></div>';
+  }
+  return '<div class="bars">'+Array.from({length:Math.min(x.b,18)},()=>'<i class="bar"></i>').join('')+'<b>　每一份／每組：'+x.b+'</b></div>';
+}
+function layout(content){page.classList.remove('turn');void page.offsetWidth;page.classList.add('turn');page.innerHTML=content;dots()}
+function story(x){return `<span class="badge">第 ${n+1} 題／${qs.length}</span><div class="qtitle">${x.title}</div><div class="story">💡 ${x.hint}</div><div class="visual" aria-label="分組輔助圖">${vis(x)}</div>`}
+function render(){let x=qs[n];if(step===0)layout(`${story(x)}<div class="stephead"><b class="stepnum">1</b><h2>理解問題</h2></div><p>題目最終要找的是甚麼？</p><div class="choices"><button class="choice" onclick="answer(0,0)">每組／每人有多少</button><button class="choice" onclick="answer(0,1)">題目要求的答案數量（${x.unit}）</button><button class="choice" onclick="answer(0,2)">所有物品的總數</button></div><p id="fb" class="feedback"></p>`);
+else if(step===1)layout(`${story(x)}<div class="stephead"><b class="stepnum">2</b><h2>訂立計劃：辨識除法</h2></div><p>這是哪一種除法？</p><div class="choices"><button class="choice" onclick="answer(1,'均分除')">🟡 均分除：<br>「${x.a} 均分給 ${x.b}」</button><button class="choice" onclick="answer(1,'包含除')">🟣 包含除：<br>「${x.a} 包含多少個 ${x.b}」</button></div><p id="fb" class="feedback"></p>`);
+else if(step===2)layout(`${story(x)}<div class="stephead"><b class="stepnum">3</b><h2>實行計劃：列式及計算</h2></div><p>把數字填進除式，再計算。</p><div class="entry"><input id="a" inputmode="numeric" aria-label="被除數"> ÷ <input id="b" inputmode="numeric" aria-label="除數"> ＝ <input id="q" inputmode="numeric" aria-label="商">${x.r?' 餘 <input id="r" inputmode="numeric" aria-label="餘數">':''}</div><p class="small">小提示：除數是「每份有多少／每組有多少」。</p><button class="primary" onclick="calc()">核對列式和計算</button><p id="fb" class="feedback"></p>`);
+else layout(`${story(x)}<div class="stephead"><b class="stepnum">4</b><h2>回顧及核對答案</h2></div><div class="checklist"><div class="check">① 用乘法核對：${x.b} × <input id="c1" inputmode="numeric" aria-label="商">${x.r?' ＋ <input id="c2" inputmode="numeric" aria-label="餘數">':''} ＝ ${x.a}</div>${x.round?'<div class="check">② 餘下的 8 名學生自成一組，所以要在完整組數上加 1 組。</div>':''}${x.two?'<div class="check">② 第一步：870 ÷ 15 = 58（包）；第二步：58 ÷ 2 = <input id="c3" inputmode="numeric" aria-label="盒數">（盒）</div>':''}<div class="check">③ 寫出答案：<input id="word" class="long" aria-label="文字答案"> ${x.unit}</div></div><button class="primary" onclick="check()">完成核對</button><p id="fb" class="feedback"></p>`)}
+function feedback(msg,ok=false){let e=document.querySelector('#fb');e.textContent=msg;e.className='feedback '+(ok?'success':'error')}
+function answer(s,val){attempts++;let x=qs[n],correct=s===0?val===1:val===x.kind;if(!correct)return feedback(s===0?'再看清楚：題目最後問「多少 '+x.unit+'」；選出最貼近的答案。':'想一想題目的話：它是「平均分給」還是「每…一組／一台」？');step++;render()}
+function calc(){attempts++;let x=qs[n],a=+document.querySelector('#a').value,b=+document.querySelector('#b').value,q=+document.querySelector('#q').value,r=x.r?+document.querySelector('#r').value:0;if(a===x.a&&b===x.b&&q===x.q&&r===x.r){step++;render()}else feedback('還未完全正確。先檢查：總數放在 ÷ 的左邊；「每份／每組」放在右邊，然後用乘法想想看。')}
+function check(){attempts++;let x=qs[n],c1=+document.querySelector('#c1').value,c2=x.r?+document.querySelector('#c2').value:x.r,c3=x.two?+document.querySelector('#c3').value:29,word=document.querySelector('#word').value.replace(/\s/g,'');let final=x.round?16:x.two?29:x.q;if(c1!==x.q||c2!==x.r||(x.two&&c3!==29)||!(word.includes(String(final))))return feedback('再核對一次：乘法能還原總數嗎？文字答案也要按題意處理餘數或第二步。');celebrate(final,x)}
+function celebrate(ans,x){layout(`<div class="celebrate"><div class="big">🎉 ⭐ 🏆</div><h2>你完成了第 ${n+1} 題！</h2><p>答案是 <b>${ans} ${x.unit}</b>。你已經用 POLYA 四步曲完成解題和核對！</p><p class="small">本題嘗試次數：${attempts}</p><button class="primary" onclick="next()">${n===qs.length-1?'查看完成紀念卡':'揭開下一頁 ➜'}</button></div>`)}
+function next(){n++;step=0;attempts=0;if(n<qs.length)render();else layout(`<div class="celebrate"><div class="big">🌈 🦊 ✨</div><h2>除法探險完成！</h2><p>你已學會分辨「均分除」和「包含除」，還懂得用乘法核對答案。</p><button class="primary" onclick="location.reload()">再玩一次</button></div>`)}render();
+
+</script>
+<script>
+const renderPolya = render;
+function readingTitle(x){let text=x.title;[...x.keys].sort((a,b)=>b.length-a.length).forEach(key=>{const i=x.keys.indexOf(key);text=text.replace(key,`<button type="button" class="keyword ${marked.has(key)?'marked':''}" onclick="markKey(${i})" aria-pressed="${marked.has(key)}">${key}</button>`)});return text}
+function markKey(i){marked.add(qs[n].keys[i]);render()}
+function startProblem(){if(marked.size===qs[n].keys.length){reading=false;render()}else{const box=document.querySelector('#fb');box.textContent='先從題目中圈出所有有用的數量、分組方法和問題。';box.className='feedback error'}}
+render=function(){if(!reading)return renderPolya();const x=qs[n],all=marked.size===x.keys.length;layout(`<span class="badge">第 ${n+1} 題／${qs.length}</span><div class="stephead"><b class="stepnum">讀</b><h2>先閱讀題目，圈出關鍵字</h2></div><p class="read-instruction">先安靜讀一次題目。再輕按題目中有紫色虛線的文字，為它圈起來：找出<b>總數、分組／平均分的方法</b>和<b>題目問甚麼</b>。</p><div class="qtitle">${readingTitle(x)}</div><p class="mark-count" aria-live="polite">已圈出 ${marked.size}／${x.keys.length} 個關鍵字</p><button class="primary" onclick="startProblem()" ${all?'':'disabled'}>${all?'我已找齊，開始解題 ➜':'先圈出所有關鍵字'}</button><p id="fb" class="feedback"></p>`)};
+next=function(){n++;step=0;attempts=0;reading=true;marked=new Set();if(n<qs.length)render();else layout(`<div class="celebrate"><div class="big">🌈 🦊 ✨</div><h2>除法探險完成！</h2><p>你已學會分辨「均分除」和「包含除」，還懂得用乘法核對答案。</p><button class="primary" onclick="location.reload()">再玩一次</button></div>`)};
+render();
+</script>
+<style>.keyword{border:0;background:transparent;padding:0;margin:0;color:inherit;font:inherit;font-weight:inherit;box-shadow:none}.keyword.marked{border:3px solid #f05a93;background:#ffe1ed;border-radius:999px;padding:1px 4px;font-weight:900}.mark-count{display:none}.bar,.bar:nth-child(3n){background:linear-gradient(90deg,#ffdd65,#ff9d45);border-color:#d96c30}</style>
+<script>
+const renderBeforeImprove=render;
+const understanding=[
+ ['題目最後要找的是甚麼？','共有多少枝百合花','每名學生可得多少枝百合花','平均分給多少名學生'],
+ ['題目最後要找的是甚麼？','共有多少個車輪','最多可製作多少台玩具摩天輪','每台需要多少個車輪'],
+ ['題目最後要找的是甚麼？','每組有多少名學生','共可分成多少組','共有多少名學生'],
+ ['題目最後要找的是甚麼？','每包有多少塊曲奇','共可裝成多少盒曲奇','每盒有多少包曲奇']
+];
+const visualLabels=['分給 14 名學生','每 18 個車輪製作一台摩天輪','每 12 人一組','每 15 塊曲奇包成一包'];
+function improveCurrentScreen(){if(reading){const instruction=document.querySelector('.read-instruction');if(instruction)instruction.innerHTML='先安靜讀一次題目。再自行輕按你認為是關鍵的文字，為它圈起來。找出<b>總數、分組／平均分的方法</b>和<b>題目問甚麼</b>。';return}const visualText=document.querySelector('.visual b');if(visualText)visualText.textContent=visualLabels[n];if(step!==0)return;const guide=understanding[n];const question=document.querySelector('.stephead')?.nextElementSibling;if(question)question.textContent=guide[0];const choices=document.querySelector('.choices');if(choices)choices.innerHTML=guide.slice(1).map((choice,i)=>`<button class="choice" onclick="answer(0,${i})">${choice}</button>`).join('')}
+render=function(){renderBeforeImprove();improveCurrentScreen()};
+render();
+</script>
+<script>
+const renderBeforeAnswerSentence=render;
+function answerSentence(question,number,blank=false){const value=blank?'<input id="word" class="long" inputmode="numeric" aria-label="答案數字">':number;return [
+ `每名學生可得 ${value} 枝百合花。`,
+ `最多可製作 ${value} 台玩具摩天輪。`,
+ `共可分成 ${value} 組。`,
+ `共可裝成 ${value} 盒曲奇。`
+][question]}
+function improveAnswerSentence(){if(reading||step!==3)return;const finalBox=document.querySelector('.checklist .check:last-child');if(finalBox)finalBox.innerHTML=`③ 依據問句作答：${answerSentence(n,'',true)}`}
+render=function(){renderBeforeAnswerSentence();improveAnswerSentence()};
+celebrate=function(ans,x){layout(`<div class="celebrate"><div class="big">🎉 ⭐ 🏆</div><h2>你完成了第 ${n+1} 題！</h2><p>答案：<b>${answerSentence(n,ans)}</b></p><p>你已經用 POLYA 四步曲完成解題和核對！</p><p class="small">本題嘗試次數：${attempts}</p><button class="primary" onclick="next()">${n===qs.length-1?'查看完成紀念卡':'揭開下一頁 ➜'}</button></div>`)};
+render();
+</script>
+<script>
+answerSentence=function(question,number,blank=false){const value=blank?'<input id="word" class="long" inputmode="numeric" aria-label="答案數字">':number;return [
+ `每名學生可得 ${value} 枝百合花。`,
+ `最多可製作 ${value} 台玩具摩天輪，餘下 4 個車輪。`,
+ `共可分成 ${value} 組。`,
+ `共可裝成 ${value} 盒曲奇。`
+][question]};
+render();
+</script>
+<style>
+/* iPad: keep the complete question, answer area and controls usable in both orientations. */
+.page{min-height:0}.book{overflow:visible}.bars{min-width:0;flex-wrap:wrap;align-items:center}.visual{overflow:visible}.entry input{max-width:100%}
+@media (min-width:541px) and (max-width:1366px){.wrap{padding:16px max(16px,env(safe-area-inset-right)) 28px max(16px,env(safe-area-inset-left))}.page{padding:clamp(18px,3vw,28px)}.hero{margin-bottom:8px}.hero p{font-size:.95rem}.mascot{font-size:46px}.qtitle{font-size:clamp(1.2rem,3.1vw,1.65rem)}.visual{margin:14px 0}.choices{margin:14px 0}.choice{min-height:58px}.celebrate{padding:24px 14px}.celebrate .big{font-size:60px}}
+@media (max-height:760px) and (min-width:741px){.hero h1{font-size:1.65rem}.hero p{display:none}.page{padding:16px 24px}.story{padding:10px 14px}.visual{padding:10px}.bar{height:28px}.choices{gap:9px}.choice{padding:11px;min-height:52px}}
+</style>
+<script>
+celebrate=function(ans,x){layout(`<div class="celebrate"><div class="big">🎉 ⭐ 🏆</div><h2>你完成了第 ${n+1} 題！</h2><p>答案：<b>${answerSentence(n,ans)}</b></p><p>請先閱讀答句，確認它回答了題目所問。</p><button class="primary" onclick="next()">${n===qs.length-1?'查看完成紀念卡':'我已閱讀答句，揭開下一頁 ➜'}</button></div>`)};
+</script>
+<script>
+/* Circling a keyword must stay on the same page: only update that word, never redraw the page. */
+markKey=function(i){const key=qs[n].keys[i];marked.add(key);const word=document.querySelector(`.keyword[onclick="markKey(${i})"]`);if(word){word.classList.add('marked');word.setAttribute('aria-pressed','true')}if(marked.size===qs[n].keys.length){const start=document.querySelector('button[onclick="startProblem()"]');if(start){start.disabled=false;start.textContent='我已找齊，開始解題 ➜'}}};
+</script>
+<style>.bars.many{display:grid;grid-template-columns:repeat(14,16px);gap:4px;width:max-content}.bars.many .bar{width:16px;height:26px}.bars.many b{grid-column:1 / -1;margin-top:8px}@media(max-width:540px){.bars.many{grid-template-columns:repeat(14,14px);gap:3px}.bars.many .bar{width:14px;height:23px}}</style>
+</body></html>
